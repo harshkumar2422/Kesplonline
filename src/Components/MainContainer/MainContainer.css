@@ -1,0 +1,605 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Wrapper */
+.navbar-wrapper {
+  width: 100% !important;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  padding: 0px 0px 0px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  background: rgba(6, 8, 12, 0.1);
+
+}
+
+.navbar-wrapper.scrolled {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(2, 6, 23, 0.6);
+}
+/* Main Container */
+.navbar-container {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 80px;
+  transition: all 0.4s ease;
+}
+
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  gap: 40px;
+
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 50px;
+}
+
+/* Each Nav Item */
+.nav-item {
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: #cbd5e1;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.nav-item:hover {
+  color: white;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 18px;
+  border-radius: 50px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 50px;
+  height: 93vh;
+  background: url("https://academy.iccwbo.org/wp-content/uploads/2024/10/kh-78.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* Dotted pattern overlay */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 22px 22px;
+  opacity: 0.25;
+  position: absolute;
+  width: 100%;
+  /* background: linear-gradient(#2200ff, #001aff, #000000); */
+  background-color: #000;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+/* Title */
+.hero-title {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #fff;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+/* From Uiverse.io by adamgiebl */
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  margin: 0px 10px;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: ghostwhite;
+  overflow: hidden;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
+
+/* .................. */
+
+/* Main Section */
+.features {
+  background: #020817;
+  padding: 30px 5%;
+  color: #fff;
+}
+.features h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px 0px 60px 0px;
+}
+/* Grid */
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+/* Vertical Divider Lines */
+.feature-card {
+  position: relative;
+  padding: 20px;
+}
+
+.feature-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Number */
+.feature-number {
+  font-size: 18px;
+  color: #9ca3af;
+  display: 400;
+}
+
+/* Title */
+.feature-title {
+  font-size: 27px;
+  font-weight: 500;
+  margin: 60px 0px 15px 0px;
+  color: #e5e7eb;
+}
+
+/* Description */
+.feature-desc {
+  font-size: 18px;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+/* ...................................... */
+/* Base Container */
+.benefits-container {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 60px 20px;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Section */
+.benefits-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.benefits-header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 20px 0;
+  letter-spacing: -1px;
+}
+
+.benefits-header p {
+  color: #a1a1a1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Individual Card */
+.benefit-card {
+  background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 20px 30px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card:hover {
+  border-color: #333;
+  transform: translateY(-5px);
+}
+
+/* Subtle Glow Effect on Hover */
+.benefit-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(123, 45, 255, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.icon-wrapper {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.benefit-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.benefit-card p {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .benefits-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* From Uiverse.io by Creatlydev */
+.benefit-button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.benefit-button:hover {
+  background-color: #000;
+}
+
+.benefit-button:hover .button__icon-wrapper {
+  color: #000;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.benefit-button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.benefit-button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+/* ...................... */
+
+.containerr {
+  /* border: 2px solid red; */
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(1, 1, 19);
+}
+.sub-container {
+  /* border: 2px solid green; */
+  width: 100%;
+  height: 100% !important;
+  height: 500px !important;
+  color: #fff;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.sub-container img {
+  height: 100%;
+  width: 100%;
+}
+.text-container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px 60px 0px 30px;
+}
+.text-container h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: 4px;
+}
+.text-container p {
+  font-size: 18px;
+  margin: 30px 0px 0px 0px;
+}
+.mission-container {
+  margin-top: 40px;
+}
+/* .......................... */
+.core-container {
+  background: rgb(1, 1, 19);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.core-heading h2 {
+  padding: 20px;
+  font-weight: 800;
+  font-size: 3rem;
+}
+.values-container {
+  padding: 10px 60px 80px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/* NEW GRID STRUCTURE */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Each card spans 2 columns */
+.value-card {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #0d0a21, #020111);
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 25px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+/* Top row (auto handled: 3 cards = 2+2+2 = 6 cols) */
+
+/* Bottom row → center the 2 cards */
+.value-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.value-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.value-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-card {
+    grid-column: span 1 !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+/* When visible */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional variations */
+
+/* Left slide */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Right slide */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom effect */
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+}
+
+.reveal-zoom.active {
+  opacity: 1;
+  transform: scale(1);
+}
