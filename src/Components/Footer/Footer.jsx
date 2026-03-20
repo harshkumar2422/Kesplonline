@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
 import {
   FaLinkedinIn,
   FaXTwitter,
@@ -15,7 +17,14 @@ const Footer = () => {
           {/* LEFT SIDE */}
           <div className="footer-left">
             <div className="footer-logo">
-              <h2><img src={"https://www.kesplonline.com/images/icons/ic-logo-02.png"} alt="" /></h2>
+              <h2>
+                <img
+                  src={
+                    "https://www.kesplonline.com/images/icons/ic-logo-02.png"
+                  }
+                  alt=""
+                />
+              </h2>
             </div>
 
             <p className="description">
@@ -26,22 +35,22 @@ const Footer = () => {
               competitive advantage and reduce running costs
             </p>
 
-            <div className="social-icons">
-              <a href="#">
+            <div className="social-icons reveal">
+              <Link to="#">
                 <FaLinkedinIn />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <FaXTwitter />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <FaInstagram />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <FaFacebookF />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <FaThreads />
-              </a>
+              </Link>
             </div>
           </div>
 

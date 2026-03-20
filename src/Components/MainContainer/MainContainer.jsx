@@ -138,31 +138,51 @@ const MainContainer = () => {
       reveals.forEach((el) => observer.unobserve(el));
     };
   }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       {/* NAVBAR */}
       <div className={`navbar-wrapper ${scrolled ? "scrolled" : ""}`}>
         <div className="navbar-container">
+          {/* LOGO */}
           <div className="logo">
             <img
               src={"https://www.kesplonline.com/images/icons/ic-logo-02.png"}
-              alt="kesplonline logo"
+              alt="logo"
             />
           </div>
 
-          <div className="nav-links">
+          {/* DESKTOP NAV */}
+          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             {menuItems.map((item) => (
               <div
                 key={item}
                 className={`nav-item ${active === item ? "active" : ""}`}
-                onClick={() => setActive(item)}
+                onClick={() => {
+                  setActive(item);
+                  setMenuOpen(false);
+                }}
               >
                 {item}
               </div>
             ))}
           </div>
 
-          <div className="login-btn">Log In ↗</div>
+          {/* RIGHT SIDE */}
+          <div className="right-section">
+            {/* <div className="login-btn">Log In ↗</div> */}
+
+            {/* HAMBURGER */}
+            <div
+              className={`hamburger ${menuOpen ? "active" : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -181,11 +201,11 @@ const MainContainer = () => {
             developers, agents, and code come together on one platform.
           </p>
 
-          <div className="hero-buttons reveal">
-            <button className="cssbuttons-io">
+          <div className="hero-buttons ">
+            <button className="cssbuttons-io ">
               <span>Request Consulation</span>
             </button>
-            <button className="cssbuttons-io">
+            <button className="cssbuttons-io ">
               <span>Contact</span>
             </button>
           </div>
@@ -216,7 +236,36 @@ const MainContainer = () => {
               <div className="icon-wrapper">{benefit.icon}</div>
               <h3>{benefit.title}</h3>
               <p>{benefit.description}</p>
-              <button className="benefit-button">Explore</button>
+              <button className="benefit-button" style={{ color: "#fff" }}>
+                <span class="button__icon-wrapper">
+                  <svg
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="button__icon-svg"
+                    width="10"
+                  >
+                    <path
+                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+
+                  <svg
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="button__icon-svg button__icon-svg--copy"
+                  >
+                    <path
+                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </span>
+                Explore
+              </button>
             </div>
           ))}
         </div>
