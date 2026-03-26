@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./MainContainer.css";
 import images1 from "./system-integration.png";
 import images2 from "./technical-support.png";
@@ -7,6 +7,7 @@ import images4 from "./microchip.png";
 import images5 from "./digitalization.png";
 import images6 from "./customer-support.png";
 import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 const valuesData = [
   {
@@ -74,25 +75,6 @@ const benefitsData = [
   },
 ];
 const MainContainer = () => {
-  const [active, setActive] = useState("Home");
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const menuItems = [
-    "Home",
-    "About",
-    "Services",
-    "Innovation",
-    "Careers",
-    "Contact Us",
-  ];
 
   const features = [
     {
@@ -117,7 +99,9 @@ const MainContainer = () => {
     },
   ];
   useEffect(() => {
-    const reveals = document.querySelectorAll(".reveal");
+    const reveals = document.querySelectorAll(
+      ".reveal,.reveal-left, .reveal-right",
+    );
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -138,53 +122,11 @@ const MainContainer = () => {
       reveals.forEach((el) => observer.unobserve(el));
     };
   }, []);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       {/* NAVBAR */}
-      <div className={`navbar-wrapper ${scrolled ? "scrolled" : ""}`}>
-        <div className="navbar-container">
-          {/* LOGO */}
-          <div className="logo">
-            <img
-              src={"https://www.kesplonline.com/images/icons/ic-logo-02.png"}
-              alt="logo"
-            />
-          </div>
-
-          {/* DESKTOP NAV */}
-          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-            {menuItems.map((item) => (
-              <div
-                key={item}
-                className={`nav-item ${active === item ? "active" : ""}`}
-                onClick={() => {
-                  setActive(item);
-                  setMenuOpen(false);
-                }}
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div className="right-section">
-            {/* <div className="login-btn">Log In ↗</div> */}
-
-            {/* HAMBURGER */}
-            <div
-              className={`hamburger ${menuOpen ? "active" : ""}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Header />
 
       {/* HERO */}
       <div className="hero">

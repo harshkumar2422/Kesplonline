@@ -5,72 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Wrapper */
-.navbar-wrapper {
-  width: 100% !important;
-  display: flex;
-  /* justify-content: center; */
-  flex-direction: column;
-  padding: 0px 0px 0px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.4s ease;
-  background: rgba(6, 8, 12, 0.1);
-}
-
-.navbar-wrapper.scrolled {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: rgba(2, 6, 23, 0.6);
-}
-/* Main Container */
-.navbar-container {
-  width: 100% !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 16px 80px;
-  transition: all 0.4s ease;
-}
-
-/* Logo */
-.logo {
-  font-size: 2rem;
-  font-weight: 900;
-  color: white;
-  letter-spacing: 1px;
-}
-
-/* Nav Links Container */
-.nav-links {
-  display: flex;
-  gap: 40px;
-
-  background: rgba(255, 255, 255, 0.05);
-  padding: 10px;
-  border-radius: 50px;
-}
-
-/* Each Nav Item */
-.nav-item {
-  padding: 8px 16px;
-  border-radius: 50px;
-  color: #cbd5e1;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Hover */
-.nav-item:hover {
-  color: white;
-}
-
 /* Login Button */
 .login-btn {
   padding: 8px 18px;
@@ -91,7 +25,7 @@
   width: 100%;
   padding: 50px;
   height: 93vh;
-  background: url("https://academy.iccwbo.org/wp-content/uploads/2024/10/kh-78.jpg");
+  background: url("https://media.istockphoto.com/id/1487972668/photo/artificial-neural-network-abstract-technology-background.jpg?s=612x612&w=0&k=20&c=wRn-JFyd8-boqUj91IT2n9vphiINAevPA6sUbqycd6c=");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -576,13 +510,13 @@
 /* Left slide */
 .reveal-left {
   opacity: 0;
-  transform: translateX(60px);
+  transform: translateX(60px) !important;
   transition: all 0.8s ease;
 }
 
 .reveal-left.active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 /* Right slide */
@@ -682,7 +616,6 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
-
   /* NAV */
   .nav-links {
     position: absolute;
