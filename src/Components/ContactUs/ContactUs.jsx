@@ -82,13 +82,14 @@ const ContactUs = () => {
               <div className="info-item reveal">
                 <span style={{ width: "100%" }}>
                   <iframe
+                    title="Google Map Showing Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56068.92704921547!2d77.12910882355132!3d28.560514341227872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d6d7ab1211%3A0xad60ddcd63cd0688!2sKLIMAANLAGE%20ENGINEERING%20SERVICES!5e0!3m2!1sen!2sin!4v1774350552523!5m2!1sen!2sin"
                     width="100%"
                     height="300"
                     style={{ border: "0" }}
-                    allowfullscreen=""
+                    allowfullscreen
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </span>
               </div>
