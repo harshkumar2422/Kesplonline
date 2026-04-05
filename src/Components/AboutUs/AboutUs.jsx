@@ -1,29 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import "./AboutUs.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-const timelineData = [
-  {
-    title: "Requirement Assessment",
-    desc: `We analyze the client’s workflows and technical needs to clearly understand objectives, ensuring all requirements are identified for building effective and scalable solutions.`,
-  },
-  {
-    title: "Solution Design",
-    desc: `We design a tailored architecture aligned with project goals, focusing on the right technologies, clear workflows, and scalable, secure, high-performance solutions.`,
-  },
-  {
-    title: "Integration & Deployment",
-    desc: `We integrate all technology components into a unified system, ensuring smooth deployment, compatibility, and efficient performance in a stable, production-ready environment.`,
-  },
-  {
-    title: "Testing & Optimisation",
-    desc: `We rigorously test the system to ensure high performance, reliability, and security, while resolving issues and optimizing it for seamless real-world operation.`,
-  },
-  {
-    title: "Operations & Support",
-    desc: `We provide ongoing maintenance and support to ensure smooth system performance, timely issue resolution, and continuous updates for long-term stability and security.`,
-  },
-];
+import aboutimg from "./aboutbgimg.jpg";
+import abhinavpaulimg from "./Abinavpaul.png";
+import rajanmalikimg from "./Rajanmalik.jpeg";
+
 const AboutUs = () => {
   useEffect(() => {
     const reveals = document.querySelectorAll(
@@ -35,6 +17,8 @@ const AboutUs = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active"); // 👈 IMPORTANT
           }
         });
       },
@@ -49,40 +33,15 @@ const AboutUs = () => {
       reveals.forEach((el) => observer.unobserve(el));
     };
   }, []);
-  const containerRef = useRef(null);
-  const [progress, setProgress] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const container = containerRef.current;
-      if (!container) return;
-
-      const rect = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      const totalHeight = rect.height;
-      const visible = windowHeight - rect.top;
-
-      let percent = visible / totalHeight;
-      percent = Math.max(0, Math.min(1, percent));
-
-      setProgress(percent);
-
-      const index = Math.floor(percent * timelineData.length);
-      setActiveIndex(index);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <>
       <Header />
       {/* HERO */}
-      <div className="about-hero">
+      <div
+        className="about-hero"
+        style={{ backgroundImage: `url(${aboutimg})` }}
+      >
         <div className="about-hero-overlay"></div>
 
         <div className="about-hero-content reveal">
@@ -180,52 +139,176 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+      {/* ...abhinavpaul sir */}
+      <section className="leadership">
+        <div className="leadership-container">
+          {/* IMAGE SIDE */}
+          <div className="leadership-image">
+            <div className="image-card reveal">
+              <img src={abhinavpaulimg} alt="Managing Director" />
+              <div className="image-overlay">
+                <h3>Abhinav Paul</h3>
+                <p>Managing Director</p>
+              </div>
+            </div>
+          </div>
 
-      <div className="journey">
-        {/* LEFT SIDE */}
-        <div className="journey-left reveal-right">
-          <h1>
-            Project Delivery Framework
-            {/* <br /> */}
-            <span>How We Deliver</span>
-          </h1>
+          {/* CONTENT SIDE */}
+          <div className="leadership-content">
+            <h1 reveal>
+              Managing Director
+              <span className="reveal">From the Desk of Leadership</span>
+            </h1>
 
-          <p>
-            KESPL follows a structured, five-stage project delivery framework
-            designed to ensure successful, on-time, and within-scope technology
-            implementations — from initial assessment through to sustained
-            operational support.
-          </p>
-        </div>
+            <p className="reveal">
+              Abhinav Paul is a technology-driven business leader with deep
+              expertise in building and scaling data-centric and digital-first
+              enterprises. With a strong foundation across analytics, platform
+              engineering, and enterprise technology ecosystems, he brings a
+              strategic vision that blends innovation with execution.
+            </p>
 
-        {/* RIGHT SIDE */}
-        <div className="journey-right" ref={containerRef}>
-          <div className="timeline">
-            {/* Animated line */}
-            <div className="timeline-line">
-              <div
-                className="timeline-progress"
-                style={{ height: `${progress * 100}%` }}
-              ></div>
+            <p className="reveal">
+              Over the course of his career, Abhinav has worked with some of the
+              most dynamic organizations in the digital commerce and technology
+              space, where he has led high-impact initiatives in data science,
+              intelligent automation, and large-scale operational optimization.
+              His work has consistently focused on leveraging technology to
+              drive measurable business outcomes—ranging from advanced
+              forecasting systems to AI-driven decision frameworks.
+            </p>
+
+            <p className="reveal">
+              As Managing Director, Abhinav is responsible for defining the
+              company’s long-term vision, strengthening its technology
+              capabilities, and positioning the organization at the forefront of
+              next-generation IT and AI-led transformation. He is deeply
+              committed to building intelligent infrastructure, enabling
+              scalable solutions, and fostering a culture of innovation and
+              performance excellence.
+            </p>
+            <p className="reveal">
+              His leadership philosophy centers on integrating advanced
+              technology with real-world business applications—ensuring that
+              digital transformation is not just theoretical, but delivers
+              tangible impact across industries.
+            </p>
+            <div className="vision-box reveal">
+              <h3>Vision</h3>
+              <p>
+                To build a future-ready technology organization that leverages
+                AI, data intelligence, and engineering excellence to create
+                scalable, resilient, and globally competitive solutions.
+              </p>
             </div>
 
-            {timelineData.map((item, index) => (
-              <div className="timeline-item" key={index}>
-                <div
-                  className={`timeline-dot ${
-                    index <= activeIndex ? "active" : ""
-                  }`}
-                ></div>
-
-                <div className="timeline-content reveal">
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            ))}
+            <div className="leadership-areas">
+              <h3 className="reveal">Core Leadership Areas</h3>
+              <ul>
+                <li className="reveal">AI & Data Strategy</li>
+                <li className="reveal">
+                  Intelligent Infrastructure & Automation
+                </li>
+                <li className="reveal">Enterprise Technology Transformation</li>
+                <li className="reveal">Digital Platform Development</li>
+                <li className="reveal">Scalable Business Models</li>
+                <li className="reveal">Innovation & Growth Leadership</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ...rajan malik sir */}
+      <section className="leadership">
+        <div className="leadership-container rajan-leadership-container">
+          {/* CONTENT SIDE */}
+          <div className="leadership-content">
+            <h1 className="reveal">
+              Strategic Advisor – Business Excellence
+              <span className="reveal">
+                Data Centre Man" with highest Number of DC projects executed by
+                a Professional! + Cloud Strategy + Government Projects +
+                Business Management + Think Tank + Evangelist + Author
+              </span>
+            </h1>
+
+            <p className="reveal">
+              Rajan Malik is a seasoned business leader with over three decade
+              of experience in driving operational excellence, scaling
+              multi-unit enterprises, and delivering sustained profitability
+              across dynamic markets. With a strong foundation in process
+              optimization and performance management, he brings a sharp
+              strategic lens to organizations navigating growth and
+              transformation.
+            </p>
+
+            <p className="reveal">
+              Throughout his career, Rajan has successfully led large-scale
+              operations, streamlined business functions, and implemented
+              data-driven decision-making frameworks that enhance efficiency and
+              customer experience. His expertise spans business operations, cost
+              optimization, supply chain coordination, and organizational
+              restructuring—making him a valuable asset in high-growth and
+              technology-driven environments.
+            </p>
+
+            <p className="reveal">
+              As an Advisor, Rajan provides strategic guidance on building
+              scalable operating models, improving execution discipline, and
+              aligning business strategy with measurable outcomes. His
+              cross-industry perspective enables companies to bridge the gap
+              between technology deployment and real-world business impact.
+            </p>
+            <p className="reveal">
+              Rajan is particularly focused on helping organizations evolve into
+              agile, performance-oriented enterprises by integrating operational
+              intelligence with innovation.
+            </p>
+
+            <div className="leadership-areas ">
+              <h3 className="reveal">Key Areas of Expertise</h3>
+              <ul>
+                <li className="reveal">Operational Strategy & Execution</li>
+                <li className="reveal">Business Process Optimization</li>
+                <li className="reveal">
+                  Cost Control & Efficiency Enhancement
+                </li>
+                <li className="reveal">Scaling Multi-Location Operations</li>
+                <li className="reveal">Performance Management Systems</li>
+                <li className="reveal">Customer Experience Optimization</li>
+              </ul>
+            </div>
+            <div className="leadership-areas">
+              <h3 className="reveal">Advisory Impact</h3>
+              <ul>
+                <li className="reveal">
+                  Strengthen operational foundations for rapid growth
+                </li>
+                <li className="reveal">
+                  Improve profitability through structured interventions
+                </li>
+                <li className="reveal">
+                  Drive accountability and performance culture
+                </li>
+                <li className="reveal">
+                  Translate strategic vision into executable frameworks
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* IMAGE SIDE */}
+          <div className="leadership-image">
+            <div className="image-card reveal">
+              <img src={rajanmalikimg} alt="Managing Director" />
+              <div className="image-overlay">
+                <h3>Rajan Malik</h3>
+                <p>Strategic Advisor – Business Excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   );

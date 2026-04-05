@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./ContactUs.css";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+
 import contactImg from "./contact-bgimage.jpg";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   useEffect(() => {
@@ -16,6 +19,8 @@ const ContactUs = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active"); // 👈 IMPORTANT
           }
         });
       },
@@ -63,7 +68,10 @@ const ContactUs = () => {
               Whether you have questions or are ready to discuss your business,
               we’re here to help. Reach out today.
             </p>
+          </div>
 
+          {/* RIGHT SIDE */}
+          <div className="contact-right">
             <div className="contact-info">
               <div className="info-item reveal">
                 <FaEnvelope />
@@ -71,60 +79,39 @@ const ContactUs = () => {
               </div>
 
               <div className="info-item reveal">
-                <FaPhoneAlt />
-                <span>(971) 711-3212</span>
-              </div>
-
-              <div className="info-item reveal">
                 <FaMapMarkerAlt />
-                <span>F 1203, Chittaranjan Park, New Delhi – 110019</span>
+                <span>
+                  1222, 12th Floor, Ansal Towers, Nehru Place, New Delhi 110019
+                </span>
               </div>
               <div className="info-item reveal">
-                <span style={{ width: "100%" }}>
-                  <iframe
-                    title="Google Map Showing Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56068.92704921547!2d77.12910882355132!3d28.560514341227872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d6d7ab1211%3A0xad60ddcd63cd0688!2sKLIMAANLAGE%20ENGINEERING%20SERVICES!5e0!3m2!1sen!2sin!4v1774350552523!5m2!1sen!2sin"
-                    width="100%"
-                    height="300"
-                    style={{ border: "0" }}
-                    allowfullscreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                <MdWork className="contact-mail-icon"/>
+
+                <span>
+                  For career opportunities, please reach out to us at :
+                  <b> careers@kesplonline.com</b>
                 </span>
               </div>
             </div>
           </div>
-
-          {/* RIGHT SIDE */}
-          <div className="contact-right">
-            <form className="contact-form reveal">
-              <div className="form-group">
-                <label>Name</label>
-                <input type="text" placeholder="Jane Smith" />
-              </div>
-
-              <div className="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="jane@framer.com" />
-              </div>
-              <div className="form-group">
-                <label>Phone</label>
-                <input type="number" placeholder="9XXXX XXXX9" />
-              </div>
-
-              <div className="form-group">
-                <label>Message</label>
-                <textarea placeholder="Hi, I am reaching out for..." rows="5" />
-              </div>
-
-              <button type="submit" className="submit-btn">
-                Submit
-              </button>
-            </form>
-          </div>
         </div>
       </section>
+      <div className="contact map-conatiner">
+        <div className="contact-container reveal">
+          <span style={{ width: "100%" }}>
+            <iframe
+              title="Google Map Showing Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.3500192474874!2d77.24812919839479!3d28.5487345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3cf98afffff%3A0x742a8968a6570bfe!2sAnsal%20Tower%2038%20Nehru%20Place!5e0!3m2!1sen!2sin!4v1775200683264!5m2!1sen!2sin"
+              width="100%"
+              height="400"
+              style={{ border: "0" }}
+              allowfullscreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </span>
+        </div>
+      </div>
       <Footer />
     </>
   );

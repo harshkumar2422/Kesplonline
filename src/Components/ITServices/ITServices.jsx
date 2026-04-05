@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ITServices.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import itservicesbgimg from "./itservicebg.jpg";
+import itinfrastructure from "./itinfraimg.jpg";
+import technologyconsulting from "./technologyconsultingimg.jpg";
+import systeminmplation from "./SystemImplementationLifecycle Management.jpg";
 const ITServices = () => {
+  useEffect(() => {
+    const reveals = document.querySelectorAll(
+      ".reveal,.reveal-left, .reveal-right",
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+
+    return () => {
+      reveals.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
   return (
     <>
       <Header />
@@ -13,7 +40,7 @@ const ITServices = () => {
       >
         <div className="it-services-hero-overlay"></div>
 
-        <div className="it-services-hero-content ">
+        <div className="it-services-hero-content reveal">
           <h1 className="it-services-hero-title">IT Services</h1>
 
           <p className="it-services-hero-subtitle">
@@ -28,8 +55,8 @@ const ITServices = () => {
       <section className="it-services-values-section">
         <div className="it-services-container">
           {/* Heading */}
-          <h6 className="emtech-heading ">Service Deep-Dive</h6>
-          <p className="emtech-subtext">
+          <h6 className="it-services-heading reveal">Service Deep-Dive</h6>
+          <p className="it-services-subtext reveal">
             KESPL provides a comprehensive portfolio of IT services designed to
             support the long-term performance and evolution of enterprise
             technology environments. The company's service delivery model
@@ -40,12 +67,9 @@ const ITServices = () => {
           {/* Cards */}
           <div className="it-services-cards">
             {/* Card 1 */}
-            <div className="it-services-card ">
-              <div className="it-services-icon">
-                <img
-                  src="https://framerusercontent.com/images/qCPT61H8KatnJwS4aqpuVjWWdM.svg"
-                  alt=""
-                />
+            <div className="it-services-card reveal">
+              <div className="it-services-icon-card">
+                <img src={itinfrastructure} alt="" />
               </div>
               <h3>Infrastructure Management</h3>
               <p>
@@ -56,12 +80,9 @@ const ITServices = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="it-services-card ">
-              <div className="it-services-icon">
-                <img
-                  src="https://framerusercontent.com/images/c7ewovWjVsAf198pTS4MtYSO8k.svg"
-                  alt=""
-                />
+            <div className="it-services-card reveal">
+              <div className="it-services-icon-card">
+                <img src={technologyconsulting} alt="" />
               </div>
               <h3>Technology Consulting</h3>
               <p>
@@ -72,12 +93,9 @@ const ITServices = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="it-services-card ">
-              <div className="it-services-icon">
-                <img
-                  src="https://framerusercontent.com/images/sgcwYsOD6V0LWJJRJQ99llynBI.svg"
-                  alt=""
-                />
+            <div className="it-services-card reveal">
+              <div className="it-services-icon-card">
+                <img src={systeminmplation} alt="" />
               </div>
               <h3>System Implementation & Lifecycle Management</h3>
               <p>

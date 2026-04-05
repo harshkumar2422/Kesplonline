@@ -117,16 +117,21 @@
 }
 
 /* ICON */
-.it-services-icon {
-  width: 50px !important;
-  height: 50px !important;
+.it-services-icon-card {
+  width: 100% !important;
+  height: 180px !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
 }
-
+.it-services-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 /* CARD TEXT */
 .it-services-card h3 {
   font-size: 1.5rem;
@@ -138,4 +143,29 @@
   color: #a1a1a1;
   font-size: 1.1rem;
   margin-bottom: 30px;
+}
+
+/* Responsive */
+@media screen and (min-width: 200px) and (max-width: 500px) {
+  .it-services-hero {
+    padding: 80px 20px;
+  }
+  .it-services-hero-content {
+    padding: 0px;
+  }
+  .it-services-hero-title {
+    font-size: 30px;
+  }
+  .it-services-hero-subtitle {
+    line-height: 1.3;
+  }
+  .it-services-cards {
+    flex-direction: column;
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+  .it-services-card {
+    padding: 20px;
+    width: auto !important;
+  }
 }

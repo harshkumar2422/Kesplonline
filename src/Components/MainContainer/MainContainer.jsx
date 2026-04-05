@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./MainContainer.css";
+import { useNavigate } from "react-router-dom";
 import images1 from "./system-integration.png";
 import images2 from "./technical-support.png";
 import images3 from "./building.png";
@@ -41,66 +42,48 @@ const benefitsData = [
     title: "System Integration",
     description:
       "Designing and deploying complex IT systems that integrate hardware, software, and networking technologies into cohesive, efficient ecosystems.",
-    btn: "",
   },
   {
     icon: <img src={images2} alt="icnon" />,
     title: "IT Services",
     description:
-      "Consulting, infrastructure management, and implementation services that ensure optimal system performance and long-term technology evolution.",
+      "KESPL provides a comprehensive portfolio of IT services designed to support the long-term performance and evolution of enterprise technology environments. The company's service delivery model focuses on ensuring high availability, security, and operational efficiency",
   },
   {
     icon: <img src={images3} alt="icnon" />,
-    title: "Facility Management Services",
+    title: "Facility Management",
     description:
       "Professional IT operational support delivered by skilled technical personnel, ensuring uninterrupted infrastructure performance.",
   },
   {
     icon: <img src={images4} alt="icnon" />,
-    title: "Emerging Technologies",
+    title: "IT Staffing and Augmentation",
     description:
-      "Exploring and implementing solutions in Artificial Intelligence, intelligent automation, and advanced analytics for future-ready organisations.",
+      "IT Staffing and Augmentation helps businesses quickly skilled IT professionals to their teams, encuring faster project delivery, flexibility, and access to the right expertise without long-term hiring",
   },
   {
     icon: <img src={images5} alt="icnon" />,
-    title: "Digital Transformation",
-    description:
-      "Helping organisations modernise their technology environments to improve efficiency, agility, and digital readiness.",
+    title: "Digital Marketing",
+    description: `Curpent Digital Marketing Services help businesses grow their online presence through targeted strategies like SEO, social media, and advertising, driving traffic, engagement, and conversions.`,
   },
   {
     icon: <img src={images6} alt="icnon" />,
-    title: "Client Support",
+    title: "IOT",
     description:
-      "AI adapts to your business needs, allowing you to scale efficiently without increasing workload or costs.",
+      "Internet of Things (IoT) Solutions connect devices and systems to enable real-time data monitoring, automation, and smarter decision-making across operations.",
   },
 ];
 const MainContainer = () => {
+  const navigate = useNavigate();
+  const gotocontact = () => {
+    console.log("CLicked");
+    
+    navigate(`/contact`);
+  };
 
-  const features = [
-    {
-      id: "01",
-      title: "Proven Expertise",
-      desc: "We consistently deliver results with proven expertise.",
-    },
-    {
-      id: "02",
-      title: "Flexible Solutions",
-      desc: "Our platform provides highly adaptable, flexible solutions.",
-    },
-    {
-      id: "03",
-      title: "Fast Processing",
-      desc: "Enjoy seamless, secure transactions with fast process.",
-    },
-    {
-      id: "04",
-      title: "Free & Simple",
-      desc: "Setup is completely free and very simple for everyone.",
-    },
-  ];
   useEffect(() => {
     const reveals = document.querySelectorAll(
-      ".reveal,.reveal-left, .reveal-right",
+      ".reveal, .reveal-left, .reveal-right",
     );
 
     const observer = new IntersectionObserver(
@@ -108,6 +91,8 @@ const MainContainer = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active"); // 👈 IMPORTANT
           }
         });
       },
@@ -144,11 +129,11 @@ const MainContainer = () => {
           </p>
 
           <div className="hero-buttons ">
-            <button className="cssbuttons-io ">
+            {/* <button className="cssbuttons-io ">
               <span>Request Consulation</span>
-            </button>
-            <button className="cssbuttons-io ">
-              <span>Contact</span>
+            </button> */}
+            <button className="cssbuttons-io " onClick={gotocontact}>
+              <span>Contact Us</span>
             </button>
           </div>
         </div>
@@ -214,14 +199,88 @@ const MainContainer = () => {
       </section>
       <div className="features">
         <h1 className="reveal">Why Choose US</h1>
-        <div className="features-container reveal">
-          {features.map((item, index) => (
-            <div className="feature-card" key={index}>
-              <span className="feature-number">{item.id}</span>
-              <h3 className="feature-title">{item.title}</h3>
-              <p className="feature-desc">{item.desc}</p>
+        <p className="features-para">
+          KESPL offers a distinctive combination of technical expertise,
+          implementation capability, and deep market understanding that makes it
+          a trusted partner for organisations undertaking complex technology
+          initiatives.
+        </p>
+        <div className="features-cards">
+          {/* Card 1 */}
+          <div className="features-card reveal">
+            <div className="features-icon features-fancy-box-icon">
+              <img
+                src="https://cdn.prod.website-files.com/694368fec078b4de6ca4f1b6/694e068e326ac91e0dde6000_fancy-icon2.svg"
+                alt=""
+              />
             </div>
-          ))}
+            <h3>Government Ecosystem Engagement</h3>
+            <p>
+              Established relationships with central and state government
+              institutions, with a strong understanding of public sector
+              procurement frameworks
+            </p>
+          </div>
+          {/* Card 2 */}
+          <div className="features-card reveal">
+            <div className="features-icon features-fancy-box-icon">
+              <img
+                src="https://cdn.prod.website-files.com/694368fec078b4de6ca4f1b6/694e068ed35d9d22bad59e12_fancy-icon6.svg"
+                alt=""
+              />
+            </div>
+            <h3>Structured Execution Methodology</h3>
+            <p>
+              A disciplined, stage-gated project delivery framework that
+              minimises risk and ensures consistent outcomes
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="features-card reveal">
+            <div className="features-icon features-fancy-box-icon">
+              <img
+                src="https://cdn.prod.website-files.com/694368fec078b4de6ca4f1b6/694e068d5f668d6aea13b82a_fancy-icon4.svg"
+                alt=""
+              />
+            </div>
+            <h3>Large-Scale Deployment Support</h3>
+            <p>
+              Demonstrated capability to support and sustain technology
+              deployments at scale across geographies
+            </p>
+          </div>
+        </div>
+        <div className="features-cards">
+          {/* Card 4 */}
+          <div className="features-card reveal">
+            <div className="features-icon features-fancy-box-icon">
+              <img
+                src="https://cdn.prod.website-files.com/694368fec078b4de6ca4f1b6/694e068ddff4925a95fc0136_fancy-icon3.svg"
+                alt=""
+              />
+            </div>
+            <h3>Proven Integration Capabilities</h3>
+            <p>
+              Deep expertise in integrating complex, multi-vendor technology
+              environments for enterprise-scale deployments
+            </p>
+          </div>
+
+          {/* Card 5 */}
+          <div className="features-card reveal">
+            <div className="features-icon features-fancy-box-icon">
+              <img
+                src="https://cdn.prod.website-files.com/694368fec078b4de6ca4f1b6/694e068d08dbf4bfac5e7e65_fancy-icon5.svg"
+                alt=""
+              />
+            </div>
+            <h3>Skilled Technical Teams</h3>
+            <p>
+              Certified professionals with hands-on experience across
+              infrastructure, networking, systems, and emerging technologies
+            </p>
+          </div>
         </div>
       </div>
 

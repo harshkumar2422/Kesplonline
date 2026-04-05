@@ -78,12 +78,19 @@
 
 /* HEADING */
 .softwarepg-heading {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  line-height: 1 !important;
+  background: linear-gradient(90deg, #7aa2ff, #4c7dff) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0px 0px 20px 0px !important;
 }
-
+.softwarepg-subtext {
+  color: #a1a1a1;
+  font-size: 1.1rem;
+  margin: auto;
+  margin-bottom: 20px;
+}
 /* CARDS GRID */
 .softwarepg-cards {
   display: flex;
@@ -91,6 +98,7 @@
   justify-content: center;
   /* flex-wrap: wrap; */
   margin-bottom: 40px;
+  margin-top: 60px;
 }
 
 /* CARD */
@@ -110,15 +118,20 @@
 
 /* ICON */
 .softwarepg-icon {
-  width: 50px !important;
-  height: 50px !important;
+  width: 100% !important;
+  height: 180px !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
 }
-
+.softwarepg-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 /* CARD TEXT */
 .softwarepg-card h3 {
   font-size: 1.5rem;
@@ -130,4 +143,29 @@
   color: #a1a1a1;
   font-size: 1.1rem;
   margin-bottom: 30px;
+}
+/* Responsive */
+@media screen and (min-width: 200px) and (max-width: 500px) {
+  .softwarepg-hero {
+    padding: 80px 20px;
+  }
+  .softwarepg-hero-content {
+    padding: 0px;
+  }
+  .softwarepg-hero-title {
+    font-size: 30px;
+  }
+  .softwarepg-hero-subtitle {
+    line-height: 1.3;
+  }
+
+  .softwarepg-cards {
+    flex-direction: column;
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+  .softwarepg-card {
+    padding: 20px;
+    width: auto !important;
+  }
 }

@@ -15,12 +15,24 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  // 🔥 Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setDropdownOpen(false);
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [dropdownOpen]);
 
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Innovation", path: "/innovation" },
-    { name: "Careers", path: "/careers" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -32,12 +44,24 @@ const Header = () => {
       path: "/services/facility-management-services",
     },
     {
-      name: "Emerging Technologies",
-      path: "/services/emerging-technologies-services",
+      name: "IT Staffing & Augmentation",
+      path: "/services/it-staffing-augmentation-services",
     },
     {
-      name: "Digital Transformation",
-      path: "/services/digital-transformation-services",
+      name: "Digital Marketing",
+      path: "/services/digital-marketing-services",
+    },
+    {
+      name: "IOT",
+      path: "/services/iot-services",
+    },
+    {
+      name: "Business Intelligence Solutions",
+      path: "/services/business-intelligence-solutions-services",
+    },
+    {
+      name: "Government Sector Engagement",
+      path: "/services/government-sector-engagement-services",
     },
   ];
 
@@ -64,6 +88,7 @@ const Header = () => {
               onClick={() => {
                 setActive(item.name);
                 setMenuOpen(false);
+                setDropdownOpen(false);
               }}
             >
               {item.name}
@@ -76,7 +101,15 @@ const Header = () => {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <span className="dropdown-title">Services ▾</span>
+            <span
+              className="dropdown-title"
+              onClick={(e) => {
+                e.stopPropagation();
+                setDropdownOpen((prev) => !prev);
+              }}
+            >
+              Services ▾
+            </span>
 
             <div className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
               {serviceItems.map((item) => (
@@ -104,6 +137,7 @@ const Header = () => {
               onClick={() => {
                 setActive(item.name);
                 setMenuOpen(false);
+                setDropdownOpen(false);
               }}
             >
               {item.name}
@@ -115,7 +149,10 @@ const Header = () => {
         <div className="right-section">
           <div
             className={`hamburger ${menuOpen ? "active" : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+              setDropdownOpen(false);
+            }}
           >
             <span></span>
             <span></span>
