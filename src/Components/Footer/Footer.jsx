@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import footerlog from "./companylogoimg2.png";
 const Footer = () => {
   useEffect(() => {
     const reveals = document.querySelectorAll(
@@ -37,12 +38,7 @@ const Footer = () => {
             <div className="footer-logo">
               <h2>
                 <Link to="/">
-                  <img
-                    src={
-                      "https://www.kesplonline.com/images/icons/ic-logo-02.png"
-                    }
-                    alt=""
-                  />
+                  <img src={footerlog} alt="kes" />
                 </Link>
               </h2>
             </div>

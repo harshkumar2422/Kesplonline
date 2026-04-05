@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import headerlogo from "./headerlogo.png"
 
 const Header = () => {
   const [active, setActive] = useState("Home");
@@ -72,8 +73,8 @@ const Header = () => {
         <div className="logo">
           <Link to="/">
             <img
-              src="https://www.kesplonline.com/images/icons/ic-logo-02.png"
-              alt="logo"
+              src={headerlogo}
+              alt="kes"
             />
           </Link>
         </div>
