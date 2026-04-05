@@ -6,7 +6,6 @@ import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 
 import contactImg from "./contact-bgimage.jpg";
-import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   useEffect(() => {
