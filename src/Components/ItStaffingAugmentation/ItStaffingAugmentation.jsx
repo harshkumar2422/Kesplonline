@@ -10,7 +10,7 @@ import skilbgimg from "./skillgap.webp";
 import talentbgimg from "./talent.webp";
 import seamlessbgimg from "./seamless.jpg";
 import Accordion from "react-bootstrap/Accordion";
-import itaccordianimg from "./it-accoridanimg.jpg";
+import itaccordianimg from "./it-accoridanimg.jpg.jpeg";
 const ItStaffingAugmentation = () => {
   useEffect(() => {
     const reveals = document.querySelectorAll(
