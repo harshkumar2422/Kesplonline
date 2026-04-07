@@ -47,9 +47,9 @@ const SystemIntegration = () => {
           <h1 className="softwarepg-hero-title">System Integration</h1>
 
           <p className="softwarepg-hero-subtitle">
-            Designing and deploying complex IT systems that integrate hardware,
-            software, and networking technologies into cohesive, efficient
-            ecosystems.
+            Designing and delivering advanced IT environments that unify
+            hardware, software, and network technologies into a seamless,
+            high-performance ecosystem.
           </p>
         </div>
       </div>

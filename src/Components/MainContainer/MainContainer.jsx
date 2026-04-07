@@ -42,43 +42,53 @@ const benefitsData = [
     title: "System Integration",
     description:
       "Designing and deploying complex IT systems that integrate hardware, software, and networking technologies into cohesive, efficient ecosystems.",
+    route: "/services/system-integration",
   },
   {
     icon: <img src={images2} alt="icnon" />,
     title: "IT Services",
     description:
       "KESPL provides a comprehensive portfolio of IT services designed to support the long-term performance and evolution of enterprise technology environments. The company's service delivery model focuses on ensuring high availability, security, and operational efficiency",
+    route: "/services/it-services",
   },
   {
     icon: <img src={images3} alt="icnon" />,
     title: "Facility Management",
     description:
       "Professional IT operational support delivered by skilled technical personnel, ensuring uninterrupted infrastructure performance.",
+    route: "/services/facility-management-services",
   },
   {
     icon: <img src={images4} alt="icnon" />,
     title: "IT Staffing and Augmentation",
     description:
       "IT Staffing and Augmentation helps businesses quickly skilled IT professionals to their teams, encuring faster project delivery, flexibility, and access to the right expertise without long-term hiring",
+    route: "/services/it-staffing-Augmentation-services",
   },
   {
     icon: <img src={images5} alt="icnon" />,
     title: "Digital Marketing",
     description: `Curpent Digital Marketing Services help businesses grow their online presence through targeted strategies like SEO, social media, and advertising, driving traffic, engagement, and conversions.`,
+    route: "/services/digital-marketing-services",
   },
   {
     icon: <img src={images6} alt="icnon" />,
     title: "IOT",
     description:
       "Internet of Things (IoT) Solutions connect devices and systems to enable real-time data monitoring, automation, and smarter decision-making across operations.",
+    route: "/services/iot-services",
   },
 ];
 const MainContainer = () => {
   const navigate = useNavigate();
   const gotocontact = () => {
     console.log("CLicked");
-    
+
     navigate(`/contact`);
+  };
+  // ✅ HANDLE NAVIGATION FOR EXPLORE BUTTON
+  const handleExplore = (route) => {
+    navigate(route);
   };
 
   useEffect(() => {
@@ -124,8 +134,10 @@ const MainContainer = () => {
           </h1>
 
           <p className="hero-subtitle reveal">
-            Tools and trends evolve, but collaboration endures. With GitHub,
-            developers, agents, and code come together on one platform.
+            Tools and trends may change, but collaboration remains constant.
+            Today, developers, Artificial intelligence systems, and code
+            converge seamlessly on a single platform, shaping how modern
+            software is created and delivered.
           </p>
 
           <div className="hero-buttons ">
@@ -163,7 +175,11 @@ const MainContainer = () => {
               <div className="icon-wrapper">{benefit.icon}</div>
               <h3>{benefit.title}</h3>
               <p>{benefit.description}</p>
-              <button className="benefit-button" style={{ color: "#fff" }}>
+              <button
+                className="benefit-button"
+                style={{ color: "#fff" }}
+                onClick={() => handleExplore(benefit.route)}
+              >
                 <span class="button__icon-wrapper">
                   <svg
                     viewBox="0 0 14 15"

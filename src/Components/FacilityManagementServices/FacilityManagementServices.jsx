@@ -42,9 +42,7 @@ const FacilityManagementServices = () => {
         <div className="facility-hero-overlay"></div>
 
         <div className="facility-hero-content reveal">
-          <h1 className="facility-hero-title ">
-            IT Facility Management Services
-          </h1>
+          <h1 className="facility-hero-title ">Facility Management Services</h1>
 
           <p className="facility-hero-subtitle">
             Professional IT operational support delivered by skilled technical

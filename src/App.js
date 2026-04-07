@@ -14,6 +14,8 @@ import BusinessIntelligenceSolutions from "./Components/BusinessIntelligenceSolu
 import SystemIntegration from "./Components/SystemIntegration/SystemIntegration";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import GovernmentSectorEngagement from "./Components/GovernmentSectorEngagement/GovernmentSectorEngagement";
+import BPO from "./Components/BPO/BPO";
+import CyberSecurity from "./Components/CyberSecurity/CyberSecurity";
 
 const App = () => {
   return (
@@ -48,6 +50,11 @@ const App = () => {
         <Route
           path="/services/government-sector-engagement-services"
           element={<GovernmentSectorEngagement />}
+        />
+        <Route path="/services/bpo-services" element={<BPO />} />
+        <Route
+          path="/services/cyber-security-services"
+          element={<CyberSecurity />}
         />
       </Routes>
     </>

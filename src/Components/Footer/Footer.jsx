@@ -85,12 +85,12 @@ const Footer = () => {
                 </li>
                 <li className="reveal">
                   <Link to="/services/facility-management-services">
-                    Facility Management Services
+                    Facility Management
                   </Link>
                 </li>
                 <li className="reveal">
                   <Link to="/services/it-staffing-Augmentation-services">
-                    It Staffing Augmentation
+                    IT Staffing Augmentation
                   </Link>
                 </li>
                 <li className="reveal">
@@ -104,6 +104,19 @@ const Footer = () => {
                 <li className="reveal">
                   <Link to="/services/business-intelligence-solutions-services">
                     Business Intelligence Solutions
+                  </Link>
+                </li>
+                <li className="reveal">
+                  <Link to="/services/government-sector-engagement-services">
+                    Government Sector Engagement
+                  </Link>
+                </li>
+                <li className="reveal">
+                  <Link to="/services/bpo-services">BPO</Link>
+                </li>
+                <li className="reveal">
+                  <Link to="/services/cyber-security-services">
+                    Cyber Security
                   </Link>
                 </li>
               </ul>

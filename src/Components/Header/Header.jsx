@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import headerlogo from "./headerlogo.png"
+import headerlogo from "./headerlogo.png";
 
 const Header = () => {
   const [active, setActive] = useState("Home");
@@ -64,6 +64,14 @@ const Header = () => {
       name: "Government Sector Engagement",
       path: "/services/government-sector-engagement-services",
     },
+    {
+      name: "BPO",
+      path: "/services/bpo-services",
+    },
+    {
+      name: "Cyber Security",
+      path: "/services/cyber-security-services",
+    },
   ];
 
   return (
@@ -72,10 +80,7 @@ const Header = () => {
         {/* LOGO */}
         <div className="logo">
           <Link to="/">
-            <img
-              src={headerlogo}
-              alt="kes"
-            />
+            <img src={headerlogo} alt="kes" />
           </Link>
         </div>
 
