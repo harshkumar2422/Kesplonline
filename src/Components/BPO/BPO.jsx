@@ -125,7 +125,7 @@ const BPO = () => {
             </div>
           </div>
           <div className="bpo-services-conatiner">
-            <div className="bpo-services-subcontainer reveal-right">
+            <div className="bpo-services-subcontainer reveal">
               <img src={whychooseimg} alt="" />
             </div>
             <div className="bpo-services-subcontainer">
@@ -258,13 +258,15 @@ const BPO = () => {
                 End-to-end ownership of business processes with SLA-driven
                 delivery.
               </p>
-              <p className="bpo-engment-serve reveal">Dedicated Delivery Centers</p>
+              <p className="bpo-engment-serve reveal">
+                Dedicated Delivery Centers
+              </p>
               <p className="bpo-services-subtext reveal">
                 Fully managed offshore teams aligned exclusively to your
                 organization.
               </p>
             </div>
-            <div className="accordian-subcontainer reveal-left">
+            <div className="accordian-subcontainer reveal">
               <img src={engmentimg} alt="" />
             </div>
           </div>
