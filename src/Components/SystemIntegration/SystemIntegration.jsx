@@ -7,7 +7,7 @@ import itinfrastructuredeployment from "./it-infrastructure.jpg";
 import enterprisesystemintegration from "./syatem-Integration.jpg";
 import networkarchitectureimplementation from "./NetworkArchitectureImplementation.jpg";
 import securityinfrastructureintegration from "./securityinfrastructure.jpg";
-import datamanagementsystems from "./DataManagementSystems.webp";
+// import datamanagementsystems from "./DataManagementSystems.webp";
 import softwareplatformintegration from "./software-platform.jpg";
 const SystemIntegration = () => {
   useEffect(() => {
