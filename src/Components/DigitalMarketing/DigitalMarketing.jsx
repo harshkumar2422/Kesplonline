@@ -86,7 +86,10 @@ const DigitalMarketing = () => {
             {/* Card 2 */}
             <div className="digitalmarketing-card reveal">
               <div className="digitalmarketing-icon">
-                <img src={seobgimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563713/seoimg_htjzqo.webp"
+                  alt=""
+                />
               </div>
               <h3>SEO Services</h3>
               <p>

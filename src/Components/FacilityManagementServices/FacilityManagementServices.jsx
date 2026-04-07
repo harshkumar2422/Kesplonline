@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import fcmbgimg from "./fcimg.jpg";
 import "./FacilityManagementServices.css";
-import skilledtechimg from "./skilledtechnicalimg.webp";
+import skilledtechimg from "./skilledtechimg.webp";
 import helpdeskimg from "./helpdesksupport.jpg";
 import infrastructure from "./infrastructuremonitruing.webp";
 import incidentmanagementimg from "./incidentmanagement.jpg";
@@ -71,7 +71,10 @@ const FacilityManagementServices = () => {
             {/* Card 1 */}
             <div className="facility-card reveal">
               <div className="facility-icon">
-                <img src={skilledtechimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563198/skilledtechimg_d2lr0p.webp"
+                  alt=""
+                />
               </div>
               <h3>Skilled Technical Personnel</h3>
               <p>Deployment of certified professionals at client sites</p>
@@ -80,7 +83,10 @@ const FacilityManagementServices = () => {
             {/* Card 2 */}
             <div className="facility-card reveal">
               <div className="facility-icon">
-                <img src={infrastructure} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775562845/infrastructuremonitruing_mdgcot.webp"
+                  alt=""
+                />
               </div>
               <h3>Infrastructure Monitoring</h3>
               <p>Continuous monitoring and proactive maintenance</p>

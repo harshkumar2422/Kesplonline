@@ -233,7 +233,10 @@ const CyberSecurity = () => {
             {/* Card 1 */}
             <div className="cybersecurity-card reveal">
               <div className="cybersecurity-icon">
-                <img src={incidenytimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775564277/incidenytimg_exo81x.webp"
+                  alt=""
+                />
               </div>
               <h3>Incident Response & Resilience</h3>
               <p>

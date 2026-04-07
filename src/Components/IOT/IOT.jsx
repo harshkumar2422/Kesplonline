@@ -37,7 +37,12 @@ const IOT = () => {
   return (
     <>
       <Header />
-      <div className="IOT-hero" style={{ backgroundImage: `url(${iotbgimg})` }}>
+      <div
+        className="IOT-hero"
+        style={{
+          backgroundImage: `url(${"https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563875/iotbackground_iulke9.jpg"})`,
+        }}
+      >
         <div className="IOT-hero-overlay"></div>
 
         <div className="IOT-hero-content reveal">
@@ -66,7 +71,10 @@ const IOT = () => {
             {/* Card 1 */}
             <div className="IOT-card reveal">
               <div className="IOT-icon">
-                <img src={iotconsulting} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563925/iotconsultingimg_ahfpex.webp"
+                  alt=""
+                />
               </div>
               <h3>IoT Consulting</h3>
               <p>
@@ -78,7 +86,10 @@ const IOT = () => {
             {/* Card 2 */}
             <div className="IOT-card reveal">
               <div className="IOT-icon">
-                <img src={iotsecurity} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563956/iotsecurityimg_klb4cu.webp"
+                  alt=""
+                />
               </div>
               <h3>IoT Security</h3>
               <p>
@@ -103,7 +114,10 @@ const IOT = () => {
             {/* Card 1 */}
             <div className="IOT-card reveal">
               <div className="IOT-icon">
-                <img src={smartbuilding} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775564012/samrtbuilding_tjlbcs.avif"
+                  alt=""
+                />
               </div>
               <h3>Smart Buildings</h3>
               <p>
@@ -115,7 +129,10 @@ const IOT = () => {
             {/* Card 2 */}
             <div className="IOT-card reveal">
               <div className="IOT-icon">
-                <img src={sensordeployment} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775564043/sensordevelopment_aov9r9.webp"
+                  alt=""
+                />
               </div>
               <h3>Sensor Deployment</h3>
               <p>
@@ -127,7 +144,10 @@ const IOT = () => {
             {/* Card 3 */}
             <div className="IOT-card reveal">
               <div className="IOT-icon">
-                <img src={datacollaction} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775564089/datacollection_hqvwqg.webp"
+                  alt=""
+                />
               </div>
               <h3>Data Collection</h3>
               <p>

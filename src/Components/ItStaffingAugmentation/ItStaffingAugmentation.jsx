@@ -41,7 +41,9 @@ const ItStaffingAugmentation = () => {
       <Header />
       <div
         className="itstaffing-hero"
-        style={{ backgroundImage: `url(${staffbgimg})` }}
+        style={{
+          backgroundImage: `url(${"https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563407/itstaffingbgimgbanner_pwliuk.jpg"})`,
+        }}
       >
         <div className="itstaffing-hero-overlay"></div>
 
@@ -73,7 +75,10 @@ const ItStaffingAugmentation = () => {
           </p>
           <div className="accordian-conatiner ">
             <div className="accordian-subcontainer reveal-left">
-              <img src={itaccordianimg} alt="" />
+              <img
+                src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563457/it-accoridanimg.jpg_knvfob.jpg"
+                alt=""
+              />
             </div>
             <div className="accordian-subcontainer">
               <Accordion defaultActiveKey="0" className="it-accordian">
@@ -138,7 +143,10 @@ const ItStaffingAugmentation = () => {
             {/* Card 1 */}
             <div className="itstaffing-card reveal">
               <div className="itstaffing-icon">
-                <img src={itstaffbgimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563501/itstaffimg_hwzbca.webp"
+                  alt=""
+                />
               </div>
               <h3>IT Staffing</h3>
               <p>
@@ -162,7 +170,10 @@ const ItStaffingAugmentation = () => {
             {/* Card 3 */}
             <div className="itstaffing-card reveal">
               <div className="itstaffing-icon">
-                <img src={techservicesbgimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563555/technicalserviceimg_ox2hek.webp"
+                  alt=""
+                />
               </div>
               <h3>Technical Services</h3>
               <p>
@@ -175,7 +186,10 @@ const ItStaffingAugmentation = () => {
             {/* Card 1 */}
             <div className="itstaffing-card reveal">
               <div className="itstaffing-icon">
-                <img src={skilbgimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563596/skillgap_ypba6m.webp"
+                  alt=""
+                />
               </div>
               <h3>Skill Gap Analysis</h3>
               <p>
@@ -187,7 +201,10 @@ const ItStaffingAugmentation = () => {
             {/* Card 2 */}
             <div className="itstaffing-card reveal">
               <div className="itstaffing-icon">
-                <img src={talentbgimg} alt="" />
+                <img
+                  src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775563632/talent_nelu0h.webp"
+                  alt=""
+                />
               </div>
               <h3>Talent Sourcing</h3>
               <p>

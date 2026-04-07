@@ -319,7 +319,10 @@ const AboutUs = () => {
           {/* IMAGE SIDE */}
           <div className="leadership-image">
             <div className="image-card reveal">
-              <img src={rajanmalikimg} alt="Managing Director" />
+              <img
+                src="https://res.cloudinary.com/dbibpsvgt/image/upload/v1775562562/Rajanmalik_jzn13c.jpg"
+                alt="Managing Director"
+              />
               <div className="image-overlay">
                 <h3>Rajan Malik</h3>
                 <p>Strategic Advisor – Business Excellence</p>
